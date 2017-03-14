@@ -563,9 +563,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.1.8" data-path="../specifications/properties/follow.html">
+        <li class="chapter " data-level="1.4.1.8" data-path="../specifications/properties/follow.md">
             
-                <a href="../specifications/properties/follow.html">
+                <span>
             
                     
                     Follow
@@ -782,6 +782,8 @@
 <ul>
 <li>it SHOULD have a <code>realm</code> property. If present, the value MUST comply with the rules defined for <a href="../realm">realm URI</a>.</li>
 <li>it MAY have a <code>base</code> property. If present, the value MUST be an absolute URI to be used to represent the URI of the document for relative URI resolution. For more information, see <a href="../references#rfc-3986">Section 5.1.1 &quot;Base URI Embedded in Content&quot; in RFC 3986</a>.</li>
+<li>it MAY have a <code>focus</code> property. If present, its value MUST be the property name of the value that receives focus
+when the document is displayed to the user.</li>
 </ul>
 <p>If the value of the <code>value</code> property is an object, the value/spec pair MAY be condensed by
 replacing the <code>value</code> property with all of the properties of the object.</p>
@@ -813,6 +815,7 @@ replacing the <code>value</code> property with all of the properties of the obje
 <h2 id="user-agent-rules">User Agent Rules</h2>
 <p>If the <code>spec</code> property value is a specification URL, then the user agent MUST fetch the remote specification object using the default retrieval action for the protocol (e.g. GET for HTTP).</p>
 <p>If the user agent encounters a relative URI it MUST resolve an absolute URI using the process defined in <a href="../references#rfc-3986">Section 5 &quot;Reference Resolution&quot; in RFC 3986</a>. For example, the <code>spec</code> property in the document above would resolve to <code>http://www.example.com/specs/movies/title</code>.</p>
+<p>When finding the value identified by the <code>focus</code> property, the user agent MUST use the <a href="../processes/finding_values.html">process for finding values</a>.</p>
 
                                 
                                 </section>
@@ -856,7 +859,7 @@ replacing the <code>value</code> property with all of the properties of the obje
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Content","level":"1.2","depth":1,"next":{"title":"Values","level":"1.3","depth":1,"path":"values/index.md","ref":"values/index.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Lynx JSON Media Type","gitbook":">= 3.0.0"},"file":{"path":"content/index.md","mtime":"2016-10-19T17:33:14.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-02-21T20:02:42.309Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Content","level":"1.2","depth":1,"next":{"title":"Values","level":"1.3","depth":1,"path":"values/index.md","ref":"values/index.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Lynx JSON Media Type","gitbook":">= 3.0.0"},"file":{"path":"content/index.md","mtime":"2017-03-14T19:51:00.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-14T19:51:45.087Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

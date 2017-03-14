@@ -561,9 +561,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.1.8" data-path="../follow.html">
+        <li class="chapter " data-level="1.4.1.8" data-path="../follow.md">
             
-                <a href="../follow.html">
+                <span>
             
                     
                     Follow
@@ -781,6 +781,8 @@
 <li>MUST have an <code>href</code> property whose value is a valid <a href="../../..#uri">URI</a>.</li>
 <li>MAY have a <code>type</code> property whose value must be a valid <a href="../../../references#rfc-6838">media type name</a> to indicate the expected media type of the content.</li>
 <li>MAY have a <code>scope</code> property whose value specifies the content realm intended for display. If present, the value MUST comply with the rules defined for <a href="../../../realm">realm URI</a>.</li>
+<li>MAY have a <code>rel</code> property whose value specifies the relationship between the document containing the link and the destination resource, as described in <a href="../../../references#rfc-5988">RFC 5988</a>.</li>
+<li>MAY have a <code>follow</code> property whose value must be a positive number representing the number of milliseconds the user agent should wait before following the link on behalf of the user.</li>
 <li>MAY contain other properties.</li>
 </ul>
 <h2 id="examples">Examples</h2>
@@ -800,13 +802,12 @@
 </code></pre>
 <h2 id="authoring-rules">Authoring Rules</h2>
 <p>None</p>
-<h2 id="authoring-considerations">Authoring Considerations</h2>
-<p>While the concept of a link relationship (&quot;rel&quot;) has been intentionally omitted from these rules, that does not mean that it has no value or that it should be omitted from authored documents. The purpose of this specification is to define the meaning of the values - not to define the relationship between the value and the resource identified by the context URI. The &quot;rel&quot; concept is still important and it could be included in a link object by extension.</p>
 <h2 id="user-agent-rules">User Agent Rules</h2>
 <ul>
 <li>The user agent MUST provide the user with a control to interact with the hyperlink in order to follow it.</li>
 <li>If the user follows the hyperlink, then the user agent MUST fetch the target identified by the <code>href</code> using the default retrieval action for the protocol (e.g. GET for HTTP).</li>
 <li>The user agent SHOULD display or make the <code>href</code> accessible to the user so he/she can consider its value prior to following the hyperlink.</li>
+<li>If the link contains a <code>follow</code> property, the user agent MUST wait the specified number of milliseconds and then MUST follow the hyperlink.</li>
 </ul>
 <h2 id="user-agent-considerations">User Agent Considerations</h2>
 <ul>
@@ -852,7 +853,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Link","level":"1.4.1.3.3.1","depth":5,"next":{"title":"Submit","level":"1.4.1.3.3.2","depth":5,"path":"specifications/properties/hints/submit.md","ref":"specifications/properties/hints/submit.md","articles":[]},"previous":{"title":"Connections","level":"1.4.1.3.3","depth":4,"ref":"","articles":[{"title":"Link","level":"1.4.1.3.3.1","depth":5,"path":"specifications/properties/hints/link.md","ref":"specifications/properties/hints/link.md","articles":[]},{"title":"Submit","level":"1.4.1.3.3.2","depth":5,"path":"specifications/properties/hints/submit.md","ref":"specifications/properties/hints/submit.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Lynx JSON Media Type","gitbook":">= 3.0.0"},"file":{"path":"specifications/properties/hints/link.md","mtime":"2016-09-21T15:36:35.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-02-21T20:02:42.309Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Link","level":"1.4.1.3.3.1","depth":5,"next":{"title":"Submit","level":"1.4.1.3.3.2","depth":5,"path":"specifications/properties/hints/submit.md","ref":"specifications/properties/hints/submit.md","articles":[]},"previous":{"title":"Connections","level":"1.4.1.3.3","depth":4,"ref":"","articles":[{"title":"Link","level":"1.4.1.3.3.1","depth":5,"path":"specifications/properties/hints/link.md","ref":"specifications/properties/hints/link.md","articles":[]},{"title":"Submit","level":"1.4.1.3.3.2","depth":5,"path":"specifications/properties/hints/submit.md","ref":"specifications/properties/hints/submit.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Lynx JSON Media Type","gitbook":">= 3.0.0"},"file":{"path":"specifications/properties/hints/link.md","mtime":"2017-03-14T19:51:00.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-14T19:51:45.087Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
